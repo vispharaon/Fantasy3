@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="fantasyModelStoreContainer" CdmEntityContainer="fantasyEntities">
+    <EntitySetMapping Name="events">
+      <EntityTypeMapping TypeName="fantasyModel.events">
+        <MappingFragment StoreEntitySet="events">
+          <ScalarProperty Name="idEvents" ColumnName="idEvents" />
+          <ScalarProperty Name="eventName" ColumnName="eventName" />
+          <ScalarProperty Name="points" ColumnName="points" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="footballplayer">
+      <EntityTypeMapping TypeName="fantasyModel.footballplayer">
+        <MappingFragment StoreEntitySet="footballplayer">
+          <ScalarProperty Name="idFootballPlayer" ColumnName="idFootballPlayer" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="idFootballTeam1" ColumnName="idFootballTeam1" />
+          <ScalarProperty Name="idPosition1" ColumnName="idPosition1" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="footballteam">
+      <EntityTypeMapping TypeName="fantasyModel.footballteam">
+        <MappingFragment StoreEntitySet="footballteam">
+          <ScalarProperty Name="idFootballTeam" ColumnName="idFootballTeam" />
+          <ScalarProperty Name="teamName" ColumnName="teamName" />
+          <ScalarProperty Name="teamAmblem" ColumnName="teamAmblem" />
+          <ScalarProperty Name="teamShirt" ColumnName="teamShirt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gameweek">
+      <EntityTypeMapping TypeName="fantasyModel.gameweek">
+        <MappingFragment StoreEntitySet="gameweek">
+          <ScalarProperty Name="idGameWeek" ColumnName="idGameWeek" />
+          <ScalarProperty Name="gameweekName" ColumnName="gameweekName" />
+          <ScalarProperty Name="idSeason1" ColumnName="idSeason1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="league">
+      <EntityTypeMapping TypeName="fantasyModel.league">
+        <MappingFragment StoreEntitySet="league">
+          <ScalarProperty Name="idLeague" ColumnName="idLeague" />
+          <ScalarProperty Name="leagueName" ColumnName="leagueName" />
+          <ScalarProperty Name="owner" ColumnName="owner" />
+          <ScalarProperty Name="fromGameweek" ColumnName="fromGameweek" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="leagueparticipants">
+      <EntityTypeMapping TypeName="fantasyModel.leagueparticipants">
+        <MappingFragment StoreEntitySet="leagueparticipants">
+          <ScalarProperty Name="idLeagueParticipants" ColumnName="idLeagueParticipants" />
+          <ScalarProperty Name="participant" ColumnName="participant" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="participatesIntoLeague" ColumnName="participatesIntoLeague" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="match">
+      <EntityTypeMapping TypeName="fantasyModel.match">
+        <MappingFragment StoreEntitySet="match">
+          <ScalarProperty Name="idMatch" ColumnName="idMatch" />
+          <ScalarProperty Name="idGameWeek2" ColumnName="idGameWeek2" />
+          <ScalarProperty Name="homeTeam" ColumnName="homeTeam" />
+          <ScalarProperty Name="awayTeam" ColumnName="awayTeam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="matchevents">
+      <EntityTypeMapping TypeName="fantasyModel.matchevents">
+        <MappingFragment StoreEntitySet="matchevents">
+          <ScalarProperty Name="idMatchEvents" ColumnName="idMatchEvents" />
+          <ScalarProperty Name="idMatch1" ColumnName="idMatch1" />
+          <ScalarProperty Name="idFootballPlayer1" ColumnName="idFootballPlayer1" />
+          <ScalarProperty Name="minute" ColumnName="minute" />
+          <ScalarProperty Name="idEvents1" ColumnName="idEvents1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="playernews">
+      <EntityTypeMapping TypeName="fantasyModel.playernews">
+        <MappingFragment StoreEntitySet="playernews">
+          <ScalarProperty Name="idPlayerNews" ColumnName="idPlayerNews" />
+          <ScalarProperty Name="newsMessage" ColumnName="newsMessage" />
+          <ScalarProperty Name="idFootballPlayer1" ColumnName="idFootballPlayer1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="position">
+      <EntityTypeMapping TypeName="fantasyModel.position">
+        <MappingFragment StoreEntitySet="position">
+          <ScalarProperty Name="idPosition" ColumnName="idPosition" />
+          <ScalarProperty Name="positionName" ColumnName="positionName" />
+          <ScalarProperty Name="shortName" ColumnName="shortName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="season">
+      <EntityTypeMapping TypeName="fantasyModel.season">
+        <MappingFragment StoreEntitySet="season">
+          <ScalarProperty Name="idSeason" ColumnName="idSeason" />
+          <ScalarProperty Name="seasonName" ColumnName="seasonName" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="SquadStructure_idSquadStructure" ColumnName="SquadStructure_idSquadStructure" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="selectedsquadchecked">
+      <EntityTypeMapping TypeName="fantasyModel.selectedsquadchecked">
+        <MappingFragment StoreEntitySet="selectedsquadchecked">
+          <ScalarProperty Name="idSelectedSquadChecked" ColumnName="idSelectedSquadChecked" />
+          <ScalarProperty Name="idGameWeek1" ColumnName="idGameWeek1" />
+          <ScalarProperty Name="Squad_idPlayersTeam" ColumnName="Squad_idPlayersTeam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="squad">
+      <EntityTypeMapping TypeName="fantasyModel.squad">
+        <MappingFragment StoreEntitySet="squad">
+          <ScalarProperty Name="idPlayersTeam" ColumnName="idPlayersTeam" />
+          <ScalarProperty Name="playersTeamName" ColumnName="playersTeamName" />
+          <ScalarProperty Name="GK_owned" ColumnName="GK_owned" />
+          <ScalarProperty Name="MF_owned" ColumnName="MF_owned" />
+          <ScalarProperty Name="DEF_owned" ColumnName="DEF_owned" />
+          <ScalarProperty Name="FW_owned" ColumnName="FW_owned" />
+          <ScalarProperty Name="owner" ColumnName="owner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="squadplayer">
+      <EntityTypeMapping TypeName="fantasyModel.squadplayer">
+        <MappingFragment StoreEntitySet="squadplayer">
+          <ScalarProperty Name="idSquadPlayer" ColumnName="idSquadPlayer" />
+          <ScalarProperty Name="PlayersTeamFK" ColumnName="PlayersTeamFK" />
+          <ScalarProperty Name="FootballPlayerFK" ColumnName="FootballPlayerFK" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="squadstructure">
+      <EntityTypeMapping TypeName="fantasyModel.squadstructure">
+        <MappingFragment StoreEntitySet="squadstructure">
+          <ScalarProperty Name="idSquadStructure" ColumnName="idSquadStructure" />
+          <ScalarProperty Name="GK_min" ColumnName="GK_min" />
+          <ScalarProperty Name="GK_max" ColumnName="GK_max" />
+          <ScalarProperty Name="MF_min" ColumnName="MF_min" />
+          <ScalarProperty Name="MF_max" ColumnName="MF_max" />
+          <ScalarProperty Name="DEF_min" ColumnName="DEF_min" />
+          <ScalarProperty Name="DEF_max" ColumnName="DEF_max" />
+          <ScalarProperty Name="FW_min" ColumnName="FW_min" />
+          <ScalarProperty Name="FW_max" ColumnName="FW_max" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user">
+      <EntityTypeMapping TypeName="fantasyModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="cellPhone" ColumnName="cellPhone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="closestCity" ColumnName="closestCity" />
+          <ScalarProperty Name="UserGroup_idUserGroup" ColumnName="UserGroup_idUserGroup" />
+          <ScalarProperty Name="image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usergroup">
+      <EntityTypeMapping TypeName="fantasyModel.usergroup">
+        <MappingFragment StoreEntitySet="usergroup">
+          <ScalarProperty Name="idUserGroup" ColumnName="idUserGroup" />
+          <ScalarProperty Name="groupName" ColumnName="groupName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

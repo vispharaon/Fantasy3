@@ -1,0 +1,566 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="fantasyModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="fantasyEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="events" EntityType="fantasyModel.events" />
+    <EntitySet Name="footballplayer" EntityType="fantasyModel.footballplayer" />
+    <EntitySet Name="footballteam" EntityType="fantasyModel.footballteam" />
+    <EntitySet Name="gameweek" EntityType="fantasyModel.gameweek" />
+    <EntitySet Name="league" EntityType="fantasyModel.league" />
+    <EntitySet Name="leagueparticipants" EntityType="fantasyModel.leagueparticipants" />
+    <EntitySet Name="match" EntityType="fantasyModel.match" />
+    <EntitySet Name="matchevents" EntityType="fantasyModel.matchevents" />
+    <EntitySet Name="playernews" EntityType="fantasyModel.playernews" />
+    <EntitySet Name="position" EntityType="fantasyModel.position" />
+    <EntitySet Name="season" EntityType="fantasyModel.season" />
+    <EntitySet Name="selectedsquadchecked" EntityType="fantasyModel.selectedsquadchecked" />
+    <EntitySet Name="squad" EntityType="fantasyModel.squad" />
+    <EntitySet Name="squadplayer" EntityType="fantasyModel.squadplayer" />
+    <EntitySet Name="squadstructure" EntityType="fantasyModel.squadstructure" />
+    <EntitySet Name="user" EntityType="fantasyModel.user" />
+    <EntitySet Name="usergroup" EntityType="fantasyModel.usergroup" />
+    <AssociationSet Name="fk_MatchEvents_Events1" Association="fantasyModel.fk_MatchEvents_Events1">
+      <End Role="events" EntitySet="events" />
+      <End Role="matchevents" EntitySet="matchevents" />
+    </AssociationSet>
+    <AssociationSet Name="fk_FootballPlayer_FootballTeam1" Association="fantasyModel.fk_FootballPlayer_FootballTeam1">
+      <End Role="footballteam" EntitySet="footballteam" />
+      <End Role="footballplayer" EntitySet="footballplayer" />
+    </AssociationSet>
+    <AssociationSet Name="fk_FootballPlayer_Position1" Association="fantasyModel.fk_FootballPlayer_Position1">
+      <End Role="position" EntitySet="position" />
+      <End Role="footballplayer" EntitySet="footballplayer" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MatchEvents_FootballPlayer1" Association="fantasyModel.fk_MatchEvents_FootballPlayer1">
+      <End Role="footballplayer" EntitySet="footballplayer" />
+      <End Role="matchevents" EntitySet="matchevents" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PlayerNews_FootballPlayer1" Association="fantasyModel.fk_PlayerNews_FootballPlayer1">
+      <End Role="footballplayer" EntitySet="footballplayer" />
+      <End Role="playernews" EntitySet="playernews" />
+    </AssociationSet>
+    <AssociationSet Name="idFootballPlayerFK" Association="fantasyModel.idFootballPlayerFK">
+      <End Role="footballplayer" EntitySet="footballplayer" />
+      <End Role="squadplayer" EntitySet="squadplayer" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Match_FootballTeam1" Association="fantasyModel.fk_Match_FootballTeam1">
+      <End Role="footballteam" EntitySet="footballteam" />
+      <End Role="match" EntitySet="match" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Match_FootballTeam2" Association="fantasyModel.fk_Match_FootballTeam2">
+      <End Role="footballteam" EntitySet="footballteam" />
+      <End Role="match" EntitySet="match" />
+    </AssociationSet>
+    <AssociationSet Name="fk_GameWeek_Season1" Association="fantasyModel.fk_GameWeek_Season1">
+      <End Role="season" EntitySet="season" />
+      <End Role="gameweek" EntitySet="gameweek" />
+    </AssociationSet>
+    <AssociationSet Name="fk_League_GameWeek1" Association="fantasyModel.fk_League_GameWeek1">
+      <End Role="gameweek" EntitySet="gameweek" />
+      <End Role="league" EntitySet="league" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Match_GameWeek1" Association="fantasyModel.fk_Match_GameWeek1">
+      <End Role="gameweek" EntitySet="gameweek" />
+      <End Role="match" EntitySet="match" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SelectedSquadChecked_GameWeek1" Association="fantasyModel.fk_SelectedSquadChecked_GameWeek1">
+      <End Role="gameweek" EntitySet="gameweek" />
+      <End Role="selectedsquadchecked" EntitySet="selectedsquadchecked" />
+    </AssociationSet>
+    <AssociationSet Name="fk_League_Player1" Association="fantasyModel.fk_League_Player1">
+      <End Role="user" EntitySet="user" />
+      <End Role="league" EntitySet="league" />
+    </AssociationSet>
+    <AssociationSet Name="fk_LeagueParticipants_League1" Association="fantasyModel.fk_LeagueParticipants_League1">
+      <End Role="league" EntitySet="league" />
+      <End Role="leagueparticipants" EntitySet="leagueparticipants" />
+    </AssociationSet>
+    <AssociationSet Name="fk_LeagueParticipants_Player1" Association="fantasyModel.fk_LeagueParticipants_Player1">
+      <End Role="user" EntitySet="user" />
+      <End Role="leagueparticipants" EntitySet="leagueparticipants" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MatchEvents_Match1" Association="fantasyModel.fk_MatchEvents_Match1">
+      <End Role="match" EntitySet="match" />
+      <End Role="matchevents" EntitySet="matchevents" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Season_SquadStructure1" Association="fantasyModel.fk_Season_SquadStructure1">
+      <End Role="squadstructure" EntitySet="squadstructure" />
+      <End Role="season" EntitySet="season" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SelectedSquadChecked_Squad1" Association="fantasyModel.fk_SelectedSquadChecked_Squad1">
+      <End Role="squad" EntitySet="squad" />
+      <End Role="selectedsquadchecked" EntitySet="selectedsquadchecked" />
+    </AssociationSet>
+    <AssociationSet Name="idPlayersTeamFK" Association="fantasyModel.idPlayersTeamFK">
+      <End Role="squad" EntitySet="squad" />
+      <End Role="squadplayer" EntitySet="squadplayer" />
+    </AssociationSet>
+    <AssociationSet Name="owner_fk" Association="fantasyModel.owner_fk">
+      <End Role="user" EntitySet="user" />
+      <End Role="squad" EntitySet="squad" />
+    </AssociationSet>
+    <AssociationSet Name="fk_User_UserGroup1" Association="fantasyModel.fk_User_UserGroup1">
+      <End Role="usergroup" EntitySet="usergroup" />
+      <End Role="user" EntitySet="user" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="events">
+    <Key>
+      <PropertyRef Name="idEvents" />
+    </Key>
+    <Property Name="idEvents" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="eventName" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="points" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="matchevents" Relationship="fantasyModel.fk_MatchEvents_Events1" FromRole="events" ToRole="matchevents" />
+  </EntityType>
+  <EntityType Name="footballplayer">
+    <Key>
+      <PropertyRef Name="idFootballPlayer" />
+    </Key>
+    <Property Name="idFootballPlayer" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="lastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="idFootballTeam1" Type="Int32" Nullable="false" />
+    <Property Name="idPosition1" Type="Int32" Nullable="false" />
+    <Property Name="value" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="picture" Type="Binary" Nullable="false" MaxLength="65535" FixedLength="false" />
+    <NavigationProperty Name="footballteam" Relationship="fantasyModel.fk_FootballPlayer_FootballTeam1" FromRole="footballplayer" ToRole="footballteam" />
+    <NavigationProperty Name="position" Relationship="fantasyModel.fk_FootballPlayer_Position1" FromRole="footballplayer" ToRole="position" />
+    <NavigationProperty Name="matchevents" Relationship="fantasyModel.fk_MatchEvents_FootballPlayer1" FromRole="footballplayer" ToRole="matchevents" />
+    <NavigationProperty Name="playernews" Relationship="fantasyModel.fk_PlayerNews_FootballPlayer1" FromRole="footballplayer" ToRole="playernews" />
+    <NavigationProperty Name="squadplayer" Relationship="fantasyModel.idFootballPlayerFK" FromRole="footballplayer" ToRole="squadplayer" />
+  </EntityType>
+  <EntityType Name="footballteam">
+    <Key>
+      <PropertyRef Name="idFootballTeam" />
+    </Key>
+    <Property Name="idFootballTeam" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="teamName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="teamAmblem" Type="Binary" Nullable="false" MaxLength="65535" FixedLength="false" />
+    <Property Name="teamShirt" Type="Binary" Nullable="false" MaxLength="65535" FixedLength="false" />
+    <NavigationProperty Name="footballplayer" Relationship="fantasyModel.fk_FootballPlayer_FootballTeam1" FromRole="footballteam" ToRole="footballplayer" />
+    <NavigationProperty Name="match" Relationship="fantasyModel.fk_Match_FootballTeam1" FromRole="footballteam" ToRole="match" />
+    <NavigationProperty Name="match1" Relationship="fantasyModel.fk_Match_FootballTeam2" FromRole="footballteam" ToRole="match" />
+  </EntityType>
+  <EntityType Name="gameweek">
+    <Key>
+      <PropertyRef Name="idGameWeek" />
+    </Key>
+    <Property Name="idGameWeek" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="gameweekName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="idSeason1" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="season" Relationship="fantasyModel.fk_GameWeek_Season1" FromRole="gameweek" ToRole="season" />
+    <NavigationProperty Name="league" Relationship="fantasyModel.fk_League_GameWeek1" FromRole="gameweek" ToRole="league" />
+    <NavigationProperty Name="match" Relationship="fantasyModel.fk_Match_GameWeek1" FromRole="gameweek" ToRole="match" />
+    <NavigationProperty Name="selectedsquadchecked" Relationship="fantasyModel.fk_SelectedSquadChecked_GameWeek1" FromRole="gameweek" ToRole="selectedsquadchecked" />
+  </EntityType>
+  <EntityType Name="league">
+    <Key>
+      <PropertyRef Name="idLeague" />
+    </Key>
+    <Property Name="idLeague" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="leagueName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="owner" Type="Int32" Nullable="false" />
+    <Property Name="fromGameweek" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="gameweek" Relationship="fantasyModel.fk_League_GameWeek1" FromRole="league" ToRole="gameweek" />
+    <NavigationProperty Name="user" Relationship="fantasyModel.fk_League_Player1" FromRole="league" ToRole="user" />
+    <NavigationProperty Name="leagueparticipants" Relationship="fantasyModel.fk_LeagueParticipants_League1" FromRole="league" ToRole="leagueparticipants" />
+  </EntityType>
+  <EntityType Name="leagueparticipants">
+    <Key>
+      <PropertyRef Name="idLeagueParticipants" />
+    </Key>
+    <Property Name="idLeagueParticipants" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="participant" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="participatesIntoLeague" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="league" Relationship="fantasyModel.fk_LeagueParticipants_League1" FromRole="leagueparticipants" ToRole="league" />
+    <NavigationProperty Name="user" Relationship="fantasyModel.fk_LeagueParticipants_Player1" FromRole="leagueparticipants" ToRole="user" />
+  </EntityType>
+  <EntityType Name="match">
+    <Key>
+      <PropertyRef Name="idMatch" />
+    </Key>
+    <Property Name="idMatch" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idGameWeek2" Type="Int32" Nullable="false" />
+    <Property Name="homeTeam" Type="Int32" Nullable="false" />
+    <Property Name="awayTeam" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="footballteam" Relationship="fantasyModel.fk_Match_FootballTeam1" FromRole="match" ToRole="footballteam" />
+    <NavigationProperty Name="footballteam1" Relationship="fantasyModel.fk_Match_FootballTeam2" FromRole="match" ToRole="footballteam" />
+    <NavigationProperty Name="gameweek" Relationship="fantasyModel.fk_Match_GameWeek1" FromRole="match" ToRole="gameweek" />
+    <NavigationProperty Name="matchevents" Relationship="fantasyModel.fk_MatchEvents_Match1" FromRole="match" ToRole="matchevents" />
+  </EntityType>
+  <EntityType Name="matchevents">
+    <Key>
+      <PropertyRef Name="idMatchEvents" />
+    </Key>
+    <Property Name="idMatchEvents" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idMatch1" Type="Int32" Nullable="false" />
+    <Property Name="idFootballPlayer1" Type="Int32" Nullable="false" />
+    <Property Name="minute" Type="Int32" Nullable="false" />
+    <Property Name="idEvents1" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="events" Relationship="fantasyModel.fk_MatchEvents_Events1" FromRole="matchevents" ToRole="events" />
+    <NavigationProperty Name="footballplayer" Relationship="fantasyModel.fk_MatchEvents_FootballPlayer1" FromRole="matchevents" ToRole="footballplayer" />
+    <NavigationProperty Name="match" Relationship="fantasyModel.fk_MatchEvents_Match1" FromRole="matchevents" ToRole="match" />
+  </EntityType>
+  <EntityType Name="playernews">
+    <Key>
+      <PropertyRef Name="idPlayerNews" />
+    </Key>
+    <Property Name="idPlayerNews" Type="Int32" Nullable="false" />
+    <Property Name="newsMessage" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="idFootballPlayer1" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="footballplayer" Relationship="fantasyModel.fk_PlayerNews_FootballPlayer1" FromRole="playernews" ToRole="footballplayer" />
+  </EntityType>
+  <EntityType Name="position">
+    <Key>
+      <PropertyRef Name="idPosition" />
+    </Key>
+    <Property Name="idPosition" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="positionName" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="shortName" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="footballplayer" Relationship="fantasyModel.fk_FootballPlayer_Position1" FromRole="position" ToRole="footballplayer" />
+  </EntityType>
+  <EntityType Name="season">
+    <Key>
+      <PropertyRef Name="idSeason" />
+    </Key>
+    <Property Name="idSeason" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="seasonName" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="SquadStructure_idSquadStructure" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="gameweek" Relationship="fantasyModel.fk_GameWeek_Season1" FromRole="season" ToRole="gameweek" />
+    <NavigationProperty Name="squadstructure" Relationship="fantasyModel.fk_Season_SquadStructure1" FromRole="season" ToRole="squadstructure" />
+  </EntityType>
+  <EntityType Name="selectedsquadchecked">
+    <Key>
+      <PropertyRef Name="idSelectedSquadChecked" />
+    </Key>
+    <Property Name="idSelectedSquadChecked" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idGameWeek1" Type="Int32" Nullable="false" />
+    <Property Name="Squad_idPlayersTeam" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="gameweek" Relationship="fantasyModel.fk_SelectedSquadChecked_GameWeek1" FromRole="selectedsquadchecked" ToRole="gameweek" />
+    <NavigationProperty Name="squad" Relationship="fantasyModel.fk_SelectedSquadChecked_Squad1" FromRole="selectedsquadchecked" ToRole="squad" />
+  </EntityType>
+  <EntityType Name="squad">
+    <Key>
+      <PropertyRef Name="idPlayersTeam" />
+    </Key>
+    <Property Name="idPlayersTeam" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="playersTeamName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="GK_owned" Type="Int32" Nullable="false" />
+    <Property Name="MF_owned" Type="Int32" Nullable="false" />
+    <Property Name="DEF_owned" Type="Int32" Nullable="false" />
+    <Property Name="FW_owned" Type="Int32" Nullable="false" />
+    <Property Name="owner" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="selectedsquadchecked" Relationship="fantasyModel.fk_SelectedSquadChecked_Squad1" FromRole="squad" ToRole="selectedsquadchecked" />
+    <NavigationProperty Name="squadplayer" Relationship="fantasyModel.idPlayersTeamFK" FromRole="squad" ToRole="squadplayer" />
+    <NavigationProperty Name="user" Relationship="fantasyModel.owner_fk" FromRole="squad" ToRole="user" />
+  </EntityType>
+  <EntityType Name="squadplayer">
+    <Key>
+      <PropertyRef Name="idSquadPlayer" />
+    </Key>
+    <Property Name="idSquadPlayer" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayersTeamFK" Type="Int32" Nullable="false" />
+    <Property Name="FootballPlayerFK" Type="Int32" Nullable="false" />
+    <Property Name="priority" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="footballplayer" Relationship="fantasyModel.idFootballPlayerFK" FromRole="squadplayer" ToRole="footballplayer" />
+    <NavigationProperty Name="squad" Relationship="fantasyModel.idPlayersTeamFK" FromRole="squadplayer" ToRole="squad" />
+  </EntityType>
+  <EntityType Name="squadstructure">
+    <Key>
+      <PropertyRef Name="idSquadStructure" />
+    </Key>
+    <Property Name="idSquadStructure" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="GK_min" Type="Int32" Nullable="false" />
+    <Property Name="GK_max" Type="Int32" Nullable="false" />
+    <Property Name="MF_min" Type="Int32" Nullable="false" />
+    <Property Name="MF_max" Type="Int32" Nullable="false" />
+    <Property Name="DEF_min" Type="Int32" Nullable="false" />
+    <Property Name="DEF_max" Type="Int32" Nullable="false" />
+    <Property Name="FW_min" Type="Int32" Nullable="false" />
+    <Property Name="FW_max" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="season" Relationship="fantasyModel.fk_Season_SquadStructure1" FromRole="squadstructure" ToRole="season" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="lastName" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="dateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="gender" Type="Boolean" Nullable="false" />
+    <Property Name="cellPhone" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="country" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+    <Property Name="closestCity" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+    <Property Name="UserGroup_idUserGroup" Type="Int32" Nullable="false" />
+    <Property Name="image" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="league" Relationship="fantasyModel.fk_League_Player1" FromRole="user" ToRole="league" />
+    <NavigationProperty Name="leagueparticipants" Relationship="fantasyModel.fk_LeagueParticipants_Player1" FromRole="user" ToRole="leagueparticipants" />
+    <NavigationProperty Name="squad" Relationship="fantasyModel.owner_fk" FromRole="user" ToRole="squad" />
+    <NavigationProperty Name="usergroup" Relationship="fantasyModel.fk_User_UserGroup1" FromRole="user" ToRole="usergroup" />
+  </EntityType>
+  <EntityType Name="usergroup">
+    <Key>
+      <PropertyRef Name="idUserGroup" />
+    </Key>
+    <Property Name="idUserGroup" Type="Int32" Nullable="false" />
+    <Property Name="groupName" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="user" Relationship="fantasyModel.fk_User_UserGroup1" FromRole="usergroup" ToRole="user" />
+  </EntityType>
+  <Association Name="fk_MatchEvents_Events1">
+    <End Role="events" Type="fantasyModel.events" Multiplicity="1" />
+    <End Role="matchevents" Type="fantasyModel.matchevents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="events">
+        <PropertyRef Name="idEvents" />
+      </Principal>
+      <Dependent Role="matchevents">
+        <PropertyRef Name="idEvents1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_FootballPlayer_FootballTeam1">
+    <End Role="footballteam" Type="fantasyModel.footballteam" Multiplicity="1" />
+    <End Role="footballplayer" Type="fantasyModel.footballplayer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="footballteam">
+        <PropertyRef Name="idFootballTeam" />
+      </Principal>
+      <Dependent Role="footballplayer">
+        <PropertyRef Name="idFootballTeam1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_FootballPlayer_Position1">
+    <End Role="position" Type="fantasyModel.position" Multiplicity="1" />
+    <End Role="footballplayer" Type="fantasyModel.footballplayer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="position">
+        <PropertyRef Name="idPosition" />
+      </Principal>
+      <Dependent Role="footballplayer">
+        <PropertyRef Name="idPosition1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MatchEvents_FootballPlayer1">
+    <End Role="footballplayer" Type="fantasyModel.footballplayer" Multiplicity="1" />
+    <End Role="matchevents" Type="fantasyModel.matchevents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="footballplayer">
+        <PropertyRef Name="idFootballPlayer" />
+      </Principal>
+      <Dependent Role="matchevents">
+        <PropertyRef Name="idFootballPlayer1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PlayerNews_FootballPlayer1">
+    <End Role="footballplayer" Type="fantasyModel.footballplayer" Multiplicity="1" />
+    <End Role="playernews" Type="fantasyModel.playernews" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="footballplayer">
+        <PropertyRef Name="idFootballPlayer" />
+      </Principal>
+      <Dependent Role="playernews">
+        <PropertyRef Name="idFootballPlayer1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="idFootballPlayerFK">
+    <End Role="footballplayer" Type="fantasyModel.footballplayer" Multiplicity="1" />
+    <End Role="squadplayer" Type="fantasyModel.squadplayer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="footballplayer">
+        <PropertyRef Name="idFootballPlayer" />
+      </Principal>
+      <Dependent Role="squadplayer">
+        <PropertyRef Name="FootballPlayerFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Match_FootballTeam1">
+    <End Role="footballteam" Type="fantasyModel.footballteam" Multiplicity="1" />
+    <End Role="match" Type="fantasyModel.match" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="footballteam">
+        <PropertyRef Name="idFootballTeam" />
+      </Principal>
+      <Dependent Role="match">
+        <PropertyRef Name="homeTeam" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Match_FootballTeam2">
+    <End Role="footballteam" Type="fantasyModel.footballteam" Multiplicity="1" />
+    <End Role="match" Type="fantasyModel.match" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="footballteam">
+        <PropertyRef Name="idFootballTeam" />
+      </Principal>
+      <Dependent Role="match">
+        <PropertyRef Name="awayTeam" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_GameWeek_Season1">
+    <End Role="season" Type="fantasyModel.season" Multiplicity="1" />
+    <End Role="gameweek" Type="fantasyModel.gameweek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="season">
+        <PropertyRef Name="idSeason" />
+      </Principal>
+      <Dependent Role="gameweek">
+        <PropertyRef Name="idSeason1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_League_GameWeek1">
+    <End Role="gameweek" Type="fantasyModel.gameweek" Multiplicity="1" />
+    <End Role="league" Type="fantasyModel.league" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gameweek">
+        <PropertyRef Name="idGameWeek" />
+      </Principal>
+      <Dependent Role="league">
+        <PropertyRef Name="fromGameweek" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Match_GameWeek1">
+    <End Role="gameweek" Type="fantasyModel.gameweek" Multiplicity="1" />
+    <End Role="match" Type="fantasyModel.match" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gameweek">
+        <PropertyRef Name="idGameWeek" />
+      </Principal>
+      <Dependent Role="match">
+        <PropertyRef Name="idGameWeek2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SelectedSquadChecked_GameWeek1">
+    <End Role="gameweek" Type="fantasyModel.gameweek" Multiplicity="1" />
+    <End Role="selectedsquadchecked" Type="fantasyModel.selectedsquadchecked" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gameweek">
+        <PropertyRef Name="idGameWeek" />
+      </Principal>
+      <Dependent Role="selectedsquadchecked">
+        <PropertyRef Name="idGameWeek1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_League_Player1">
+    <End Role="user" Type="fantasyModel.user" Multiplicity="1" />
+    <End Role="league" Type="fantasyModel.league" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="league">
+        <PropertyRef Name="owner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_LeagueParticipants_League1">
+    <End Role="league" Type="fantasyModel.league" Multiplicity="1" />
+    <End Role="leagueparticipants" Type="fantasyModel.leagueparticipants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="league">
+        <PropertyRef Name="idLeague" />
+      </Principal>
+      <Dependent Role="leagueparticipants">
+        <PropertyRef Name="participatesIntoLeague" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_LeagueParticipants_Player1">
+    <End Role="user" Type="fantasyModel.user" Multiplicity="1" />
+    <End Role="leagueparticipants" Type="fantasyModel.leagueparticipants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="leagueparticipants">
+        <PropertyRef Name="participant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MatchEvents_Match1">
+    <End Role="match" Type="fantasyModel.match" Multiplicity="1" />
+    <End Role="matchevents" Type="fantasyModel.matchevents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="match">
+        <PropertyRef Name="idMatch" />
+      </Principal>
+      <Dependent Role="matchevents">
+        <PropertyRef Name="idMatch1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Season_SquadStructure1">
+    <End Role="squadstructure" Type="fantasyModel.squadstructure" Multiplicity="1" />
+    <End Role="season" Type="fantasyModel.season" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="squadstructure">
+        <PropertyRef Name="idSquadStructure" />
+      </Principal>
+      <Dependent Role="season">
+        <PropertyRef Name="SquadStructure_idSquadStructure" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SelectedSquadChecked_Squad1">
+    <End Role="squad" Type="fantasyModel.squad" Multiplicity="1" />
+    <End Role="selectedsquadchecked" Type="fantasyModel.selectedsquadchecked" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="squad">
+        <PropertyRef Name="idPlayersTeam" />
+      </Principal>
+      <Dependent Role="selectedsquadchecked">
+        <PropertyRef Name="Squad_idPlayersTeam" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="idPlayersTeamFK">
+    <End Role="squad" Type="fantasyModel.squad" Multiplicity="1" />
+    <End Role="squadplayer" Type="fantasyModel.squadplayer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="squad">
+        <PropertyRef Name="idPlayersTeam" />
+      </Principal>
+      <Dependent Role="squadplayer">
+        <PropertyRef Name="PlayersTeamFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="owner_fk">
+    <End Role="user" Type="fantasyModel.user" Multiplicity="1" />
+    <End Role="squad" Type="fantasyModel.squad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="squad">
+        <PropertyRef Name="owner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_User_UserGroup1">
+    <End Role="usergroup" Type="fantasyModel.usergroup" Multiplicity="1" />
+    <End Role="user" Type="fantasyModel.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usergroup">
+        <PropertyRef Name="idUserGroup" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="UserGroup_idUserGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
