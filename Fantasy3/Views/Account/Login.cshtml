@@ -1,4 +1,4 @@
-﻿@model Fantasy3.Models.LoginModel
+﻿@*@model Fantasy3.Models.LoginModel
 
 @{
     ViewBag.Title = "Log in";
@@ -47,4 +47,44 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+}*@
+@model Fantasy3.Models.LoginModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+<center>
+    <table>
+        <tr><td>
+<td class="hero-unit" style="background-color:#f5e60d;">
+
+    <table><tr><td style="width:500px;" >
+        
+      <fieldset style="padding-right:100px;">
+        <legend><h2>Fantasy Football BH Premier League <br /> <small>Start the best experience!</small></h2></legend>
+       
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+           
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            <br />
+                @Html.CheckBoxFor(m => m.RememberMe) <small>Remember me</small>
+       <br />    
+        <input type="submit" value="Log in" class="btn btn-success" />
+    </fieldset></td><td class="thumbnail" style="background-color:#FFFFCC;padding:50px; text-align:left;">
+<img src="~/Content/images/logo.png" alt="Logo" width="50%"/>
+<h4>NOT REGISTERED?!<br />
+<small>If you don't have an existing account, you can register by clicking the button bellow. <br /> HAVE FUN!</small></h4>
+
+@Html.ActionLink("REGISTER","Register","Account")
+</td></tr></table>
+   </td></tr></table>
+
+    </center>
 }
