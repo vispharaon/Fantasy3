@@ -9,6 +9,7 @@ c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\bin\DotNet
 c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
 c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\bin\EntityFramework.dll
 c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\bin\Microsoft.Web.Infrastructure.dll
+c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\bin\Microsoft.Web.Mvc.dll
 c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\bin\Microsoft.Web.WebPages.OAuth.dll
 c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\bin\Newtonsoft.Json.dll
 c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\bin\System.Net.Http.Formatting.dll
@@ -46,4 +47,3 @@ c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\bin\DotNet
 c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\obj\Debug\Fantasy3.dll
 c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\obj\Debug\Fantasy3.pdb
-c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\obj\Debug\Fantasy3.csprojResolveAssemblyReference.cache

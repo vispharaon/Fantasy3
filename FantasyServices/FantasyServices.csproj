@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{15B3E0D2-6217-493A-A690-158C497F5318}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FantasyServices</RootNamespace>
+    <AssemblyName>FantasyServices</AssemblyName>
+    <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <XsdCodeGenEnabled>True</XsdCodeGenEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.DomainServices.Hosting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.DomainServices.Server, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="events.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FantasyModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FantasyModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FantasyModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FantasyModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FantasyModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="footballplayer.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="footballteam.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gameweek.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="league.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="leagueparticipants.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="match.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="matchevents.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="playernews.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="position.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="season.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="selectedsquadchecked.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="squad.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="squadplayer.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="squadstructure.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usergroup.cs">
+      <DependentUpon>FantasyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserService.cs" />
+    <Compile Include="EventService.cs" />
+    <Compile Include="IUserService.cs" />
+    <Compile Include="IEventService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="FantasyModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FantasyModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="FantasyModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FantasyModel.edmx</DependentUpon>
+      <LastGenOutput>FantasyModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="FantasyModel.edmx.diagram">
+      <DependentUpon>FantasyModel.edmx</DependentUpon>
+    </None>
+    <None Include="FantasyModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FantasyModel.edmx</DependentUpon>
+      <LastGenOutput>FantasyModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Scripts\jquery-2.1.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\WCF\Microsoft.VisualStudio.ServiceModel.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
+        <WcfProjectProperties>
+          <AutoStart>True</AutoStart>
+        </WcfProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

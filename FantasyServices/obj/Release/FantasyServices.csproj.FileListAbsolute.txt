@@ -1,0 +1,10 @@
+C:\Users\Amar\Documents\Visual Studio 2012\Projects\DenisRepo\FantasyServices\bin\Release\FantasyServices.dll.config
+C:\Users\Amar\Documents\Visual Studio 2012\Projects\DenisRepo\FantasyServices\bin\Release\FantasyServices.dll
+C:\Users\Amar\Documents\Visual Studio 2012\Projects\DenisRepo\FantasyServices\bin\Release\FantasyServices.pdb
+C:\Users\Amar\Documents\Visual Studio 2012\Projects\DenisRepo\FantasyServices\bin\Release\EntityFramework.dll
+C:\Users\Amar\Documents\Visual Studio 2012\Projects\DenisRepo\FantasyServices\bin\Release\Newtonsoft.Json.dll
+C:\Users\Amar\Documents\Visual Studio 2012\Projects\DenisRepo\FantasyServices\bin\Release\EntityFramework.xml
+C:\Users\Amar\Documents\Visual Studio 2012\Projects\DenisRepo\FantasyServices\bin\Release\Newtonsoft.Json.xml
+C:\Users\Amar\Documents\Visual Studio 2012\Projects\DenisRepo\FantasyServices\obj\Release\FantasyServices.csprojResolveAssemblyReference.cache
+C:\Users\Amar\Documents\Visual Studio 2012\Projects\DenisRepo\FantasyServices\obj\Release\FantasyServices.dll
+C:\Users\Amar\Documents\Visual Studio 2012\Projects\DenisRepo\FantasyServices\obj\Release\FantasyServices.pdb

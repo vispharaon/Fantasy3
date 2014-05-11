@@ -57,6 +57,20 @@ namespace Fantasy3.Controllers
             {
                 using (fantasyEntities fe = new fantasyEntities())
                 {
+                   // UserCall.UserServiceClient data = new UserCall.UserServiceClient();
+                    
+                    //if (ModelState.IsValid && data.IsValid(model.UserName, model.Password))
+                    //{
+                    //    Session["LoggedUserID"] = model.UserName;
+                    //    FormsAuthentication.SetAuthCookie(model.UserName, true);
+
+                    //    return RedirectToAction("AfterLogin");
+                    //}
+                    //else
+                    //{
+                    //    ModelState.AddModelError("", "The user name or password provided is incorrect.");
+                    //    return View(model);
+                    //}
                     //Druga opcija je praviti varijablu i proslijediti koje god parametre treba u sesiju!
                     var userObj = fe.user.Where(a => a.email.Equals(model.UserName) && a.password.Equals(model.Password)).FirstOrDefault();
                     if ( userObj != null)
