@@ -47,3 +47,4 @@ c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\bin\DotNet
 c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\obj\Debug\Fantasy3.dll
 c:\users\amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\obj\Debug\Fantasy3.pdb
+C:\Users\Amar\documents\visual studio 2012\Projects\Fantasy3\Fantasy3\obj\Debug\Fantasy3.csprojResolveAssemblyReference.cache

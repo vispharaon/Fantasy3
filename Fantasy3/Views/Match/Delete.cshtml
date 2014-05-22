@@ -1,0 +1,46 @@
+﻿@model Fantasy3.Models.match
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>match</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idMatch)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idMatch)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.gameweek.gameweekName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.gameweek.gameweekName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.footballteam.teamName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.footballteam.teamName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.footballteam1.teamName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.footballteam1.teamName)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

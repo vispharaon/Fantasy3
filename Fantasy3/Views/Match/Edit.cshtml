@@ -1,0 +1,59 @@
+﻿@model Fantasy3.Models.match
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>match</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idMatch)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.idMatch)
+            @Html.ValidationMessageFor(model => model.idMatch)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idGameWeek2, "gameweek")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idGameWeek2", String.Empty)
+            @Html.ValidationMessageFor(model => model.idGameWeek2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.homeTeam, "footballteam")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("homeTeam", String.Empty)
+            @Html.ValidationMessageFor(model => model.homeTeam)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.awayTeam, "footballteam1")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("awayTeam", String.Empty)
+            @Html.ValidationMessageFor(model => model.awayTeam)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

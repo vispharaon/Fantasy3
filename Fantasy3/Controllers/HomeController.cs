@@ -10,6 +10,11 @@ namespace Fantasy3.Controllers
     {
         public ActionResult Index()
         {
+            if (Session["LoggedUserID"] != null)
+            {
+                return RedirectToAction("AfterLogin", "Account");
+            }
+
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
 
             return View();

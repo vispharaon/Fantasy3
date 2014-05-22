@@ -1,0 +1,43 @@
+﻿@model Fantasy3.Models.match
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>match</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idMatch)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idMatch)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.gameweek.gameweekName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.gameweek.gameweekName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.footballteam.teamName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.footballteam.teamName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.footballteam1.teamName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.footballteam1.teamName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

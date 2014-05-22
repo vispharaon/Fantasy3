@@ -24,6 +24,10 @@ namespace Fantasy3.Controllers
         public ActionResult Login()
         {
             //ViewBag.ReturnUrl = returnUrl;
+            if (Session["LoggedUserID"] != null)
+            {
+                return RedirectToAction("AfterLogin");
+            }
             return View();
         }
 
@@ -111,7 +115,7 @@ namespace Fantasy3.Controllers
         public ActionResult LogOff()
         {
             WebSecurity.Logout();
-
+            //FormsAuthentication.SetAuthCookie("amar@amar.amar", true);
             return RedirectToAction("Index", "Home");
         }
 

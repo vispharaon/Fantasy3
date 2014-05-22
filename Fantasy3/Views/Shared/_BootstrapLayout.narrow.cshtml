@@ -67,7 +67,13 @@
         </div>
 
         @Html.Partial("_alerts")
+        <ul id="menu">
+            <li>@Html.ActionLink("Meèevi", "Index", "Match")</li>
+           @* <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>*@
+        </ul>   
         @RenderBody()
+@*        <button type="button" class="btn btn-default">Meèevi</button>*@
         <hr>
         <footer>
             <p>&copy; Company @System.DateTime.Now.ToString("yyyy")</p>

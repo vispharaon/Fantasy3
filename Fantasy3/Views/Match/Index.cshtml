@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Fantasy3.Models.match>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idMatch)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gameweek.gameweekName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.footballteam.teamName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.footballteam1.teamName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idMatch)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gameweek.gameweekName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.footballteam.teamName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.footballteam1.teamName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
