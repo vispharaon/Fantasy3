@@ -2,26 +2,30 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_BootstrapLayout.narrow.cshtml";
 }
-
-<h2>Index</h2>
+<br />
+<h2><small>Meč - Početna</small></h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+<button type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-plus"> @Html.ActionLink("Kreiraj Meč", "Create")</span>
+</button>
+    
 </p>
-<table>
+<table class="table table-striped">
     <tr>
-        <th>
+        <th class="form-control-static">
             @Html.DisplayNameFor(model => model.idMatch)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.gameweek.gameweekName)
+        <th class="form-control-static">
+           @Html.DisplayNameFor(model => model.gameweek.gameweekName)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.footballteam.teamName)
+        <th class="form-control-static">
+            Domaći tim
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.footballteam1.teamName)
+        <th class="form-control-static">
+            Gostujući tim
         </th>
         <th></th>
     </tr>
@@ -41,9 +45,9 @@
             @Html.DisplayFor(modelItem => item.footballteam1.teamName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            <button type="button" class="active">@Html.ActionLink("Edit", "Edit", new { id=item.idMatch  }) </button>
+            <button type="button" class="active">@Html.ActionLink("Details", "Details", new {  id=item.idMatch  }) </button>
+            <button type="button" class="active">@Html.ActionLink("Delete", "Delete", new { id=item.idMatch   })</button>
         </td>
     </tr>
 }

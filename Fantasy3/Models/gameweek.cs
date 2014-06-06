@@ -11,6 +11,7 @@ namespace Fantasy3.Models
 {
     using System;
     using System.Collections.Generic;
+using System.ComponentModel;
     
     public partial class gameweek
     {
@@ -20,8 +21,9 @@ namespace Fantasy3.Models
             this.match = new HashSet<match>();
             this.selectedsquadchecked = new HashSet<selectedsquadchecked>();
         }
-    
+        [DisplayName("ID")]
         public int idGameWeek { get; set; }
+        [DisplayName("Kolo")]
         public string gameweekName { get; set; }
         public int idSeason1 { get; set; }
     

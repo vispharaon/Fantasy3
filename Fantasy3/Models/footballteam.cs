@@ -11,6 +11,7 @@ namespace Fantasy3.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     
     public partial class footballteam
     {
@@ -20,8 +21,10 @@ namespace Fantasy3.Models
             this.match = new HashSet<match>();
             this.match1 = new HashSet<match>();
         }
-    
+
+        [DisplayName("ID")]
         public int idFootballTeam { get; set; }
+        [DisplayName("Tim")]
         public string teamName { get; set; }
         public byte[] teamAmblem { get; set; }
         public byte[] teamShirt { get; set; }

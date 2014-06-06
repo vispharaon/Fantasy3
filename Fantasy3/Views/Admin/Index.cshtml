@@ -1,14 +1,26 @@
-﻿@{
+﻿@model Fantasy3.Models.Teams
+
+@{
 
     
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Home";
+                   
     Layout = "~/Views/Shared/_BootstrapLayout.narrow.cshtml";
     @*<a href="~/Views/Shared/_BootstrapLayout.narrow.cshtml">~/Views/Shared/_BootstrapLayout.narrow.cshtml</a>*@
 }
-
-<h2>Index</h2>
-<div ng-app>
+<br />
+<h2><small>Admin - Početna</small></h2>
+<div data-ng-app>
     <h1 data-ng-controller="HelloWorldCtrl">{{helloMessage}}</h1>
+
+@*    <h2>FillDropDwon</h2>
+        @Html.DropDownList("StudentsList", Model.Team_Names, "Select", new {onchange="GetDiv()"})
+    <br />
+    Student Division:- @Html.TextBox("myTextBox") 
+
+    <select data-ng-model="selectedTestAccount" data-ng-options="item.Id as item.Name for item in testAccounts">
+    <option value="{{testAccounts}}">Select Account</option>
+</select>*@
 
     </div>
 

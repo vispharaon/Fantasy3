@@ -2,56 +2,58 @@
 
 @{
     ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_BootstrapLayout.narrow.cshtml";
 }
-
-<h2>Edit</h2>
+<br />
+<h2><small>Uredi mečeve</small></h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>match</legend>
-
-        <div class="editor-label">
+        <legend></legend>
+                   
+        <p class="editor-label" display:"inline" right-margin:"10px">
             @Html.LabelFor(model => model.idMatch)
-        </div>
+        </p>
+
         <div class="editor-field">
             @Html.EditorFor(model => model.idMatch)
             @Html.ValidationMessageFor(model => model.idMatch)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.idGameWeek2, "gameweek")
+                @Html.LabelFor(model => model.idGameWeek2, "Kolo")
         </div>
         <div class="editor-field">
             @Html.DropDownList("idGameWeek2", String.Empty)
             @Html.ValidationMessageFor(model => model.idGameWeek2)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.homeTeam, "footballteam")
-        </div>
         <div class="editor-field">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.homeTeam, "Domaći tim")
+            </div>
             @Html.DropDownList("homeTeam", String.Empty)
             @Html.ValidationMessageFor(model => model.homeTeam)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.awayTeam, "footballteam1")
-        </div>
         <div class="editor-field">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.awayTeam, "Gostujući tim")
+            </div>
             @Html.DropDownList("awayTeam", String.Empty)
             @Html.ValidationMessageFor(model => model.awayTeam)
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+           <button type="button" class="btn btn-default btn-lg"> @*<input type="submit" value="Save" />*@ Save</button>
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <button class="active">@Html.ActionLink("Back to List", "Index")</button>
 </div>
 
 @section Scripts {

@@ -2,26 +2,28 @@
 
 @{
     ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_BootstrapLayout.narrow.cshtml";
 }
 
-<h2>Create</h2>
+<br />
+<h2><small>Kreiraj meč</small></h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>match</legend>
+        <legend></legend>
 
-        <div class="editor-label">
+        @*<div class="editor-label">
             @Html.LabelFor(model => model.idMatch)
-        </div>
-        <div class="editor-field">
+        </div>*@
+       @* <div class="editor-field">
             @Html.EditorFor(model => model.idMatch)
             @Html.ValidationMessageFor(model => model.idMatch)
-        </div>
+        </div>*@
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.idGameWeek2, "gameweek")
+            @Html.LabelFor(model => model.idGameWeek2, "Kolo:")
         </div>
         <div class="editor-field">
             @Html.DropDownList("idGameWeek2", String.Empty)
@@ -29,7 +31,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.homeTeam, "footballteam")
+            @Html.LabelFor(model => model.homeTeam, "Domaći Tim")
         </div>
         <div class="editor-field">
             @Html.DropDownList("homeTeam", String.Empty)
@@ -37,7 +39,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.awayTeam, "footballteam1")
+            @Html.LabelFor(model => model.awayTeam, "Gostujući Tim")
         </div>
         <div class="editor-field">
             @Html.DropDownList("awayTeam", String.Empty)
@@ -51,7 +53,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <button class="active">@Html.ActionLink("Back to List", "Index")</button>
 </div>
 
 @section Scripts {

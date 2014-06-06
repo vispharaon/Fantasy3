@@ -2,12 +2,13 @@
 
 @{
     ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_BootstrapLayout.narrow.cshtml";
 }
-
-<h2>Details</h2>
+<br />
+<h2><small>Detalji mečeva</small></h2>
 
 <fieldset>
-    <legend>match</legend>
+    <legend></legend>
 
     <div class="display-label">
          @Html.DisplayNameFor(model => model.idMatch)
@@ -38,6 +39,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    <button class="active">@Html.ActionLink("Edit", "Edit", new { id=Model.idMatch })</button>
+    <button class="active">@Html.ActionLink("Back to List", "Index")</button>
 </p>

@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using Fantasy3.Filters;
 using Fantasy3.Models;
+using System.Data.Objects.SqlClient;
 
 namespace Fantasy3.Controllers
 {
@@ -526,5 +527,8 @@ namespace Fantasy3.Controllers
             }
         }
         #endregion
+
+      
+
     }
 }

@@ -50,13 +50,58 @@
           max-width: 416px;
           height: 3em;
       }
+      #navlist li
+{
+display: inline;
+list-style-type: none;
+padding-right: 20px;
+}
+
+            #navlista th
+{
+display: inline;
+list-style-type: none;
+padding-right: 20px;
+}
     </style>
     <link href="@Styles.Url("~/Content/css-responsive")" rel="stylesheet" type="text/css" />
      @Scripts.Render("~/Scripts/angular.min.js")
+     @Scripts.Render("~/Scripts/app.js")
 
 <script type="text/javascript">
-    function HelloWorldCtrl($scope) {
-        $scope.helloMessage = "Hello World";
+    //function HelloWorldCtrl($scope) {
+    //    $scope.helloMessage = "Dobro došli na stranicu administratora";
+
+    //    angular.module('test', []).controller('HelloWorldCtrl', function ($scope, $http) {
+    //        $scope.selectedTestAccount = null;
+    //        $scope.testAccounts = [];
+
+    //        $http({
+    //            method: 'GET',
+    //            url: '/Admin/GetTestAccounts',
+    //            data: { applicationId: 1 }
+    //        }).success(function (result) {
+    //            $scope.testAccounts = result;
+    //        });
+    //    });
+
+    //}
+
+    function GetDiv() {
+        var rollNumber = $('#StudentsList').val();
+        $.ajax(
+        {
+            type: "POST",
+            url: "@Url.Action("GetDivOfStudent","Home")",
+         dataType: 'text',
+         data: { id: rollNumber },
+         success: function (result) {
+             $('#myTextBox').val(result);      
+         },
+         error: function (req, status, error) {
+             alert("Coudn't load partial view"+error+req);
+         }
+        });
     }
 </script>
 
@@ -71,20 +116,50 @@
             <ul class="nav nav-pills pull-right">
                 @Html.Navigation()
             </ul>
-            <h3 class="muted">MvcApplication1</h3>
+            <h3 class="muted">Admin page - Fantasy BHPL</h3>
         </div>
 
         @Html.Partial("_alerts")
-        <ul id="menu">
-            <li>@Html.ActionLink("Meèevi", "Index", "Match")</li>
+        @*<ul id="navlist">*@
+             @*<li>@Html.ActionLink("Home", "Index", "Admin")</li>*@
+            @*<li>@Html.ActionLink("Meèevi", "Index", "Match")</li>*@
            @* <li>@Html.ActionLink("Movies", "Index", "Movies")</li>
             <li>@Html.ActionLink("About", "About", "Home")</li>*@
-        </ul>   
+        @*</ul>*@   
+
+<nav class="navbar navbar-default" role="navigation">
+   @*<div class="navbar-header">
+      <a class="navbar-brand" href="#">TutorialsPoint</a>
+   </div>*@
+   <div>
+      <ul class="nav navbar-nav">
+         @*<li class="active"><a href="#">iOS</a></li>*@
+         <li class="active">@Html.ActionLink("Home", "Index", "Admin")</li>
+         <li class="active">@Html.ActionLink("Meèevi", "Index", "Match")</li>
+         @*<li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               Java 
+               <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="#">jmeter</a></li>
+               <li><a href="#">EJB</a></li>
+               <li><a href="#">Jasper Report</a></li>
+               <li class="divider"></li>
+               <li><a href="#">Separated link</a></li>
+               <li class="divider"></li>
+               <li><a href="#">One more separated link</a></li>
+            </ul>
+         </li>*@
+      </ul>
+   </div>
+</nav>
+
         @RenderBody()
 @*        <button type="button" class="btn btn-default">Meèevi</button>*@
         <hr>
         <footer>
-            <p>&copy; Company @System.DateTime.Now.ToString("yyyy")</p>
+            <p>&copy; ETA @System.DateTime.Now.ToString("yyyy")</p>
         </footer>
 
     </div> <!-- container -->

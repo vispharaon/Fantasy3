@@ -4,7 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Globalization;
+//using System.Web.Mvc;
 using System.Web.Security;
+//using System.Web.WebPages.Html;
 
 namespace Fantasy3.Models
 {
@@ -101,5 +103,10 @@ namespace Fantasy3.Models
         public string Provider { get; set; }
         public string ProviderDisplayName { get; set; }
         public string ProviderUserId { get; set; }
+    }
+
+    public class Teams
+    {
+        public IList<System.Web.Mvc.SelectListItem> Team_Names { get; set; }
     }
 }
