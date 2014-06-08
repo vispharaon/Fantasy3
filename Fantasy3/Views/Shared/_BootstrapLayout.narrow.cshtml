@@ -63,6 +63,22 @@ display: inline;
 list-style-type: none;
 padding-right: 20px;
 }
+
+ #roundeddiv div {
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+ /*div.container
+{
+    background-color:#aaa;
+}
+div.span4, div.span8, div.span12
+{
+    background-color:#eee;
+    border: 1px solid #888;
+    border-radius:3px;
+}*/
     </style>
     <link href="@Styles.Url("~/Content/css-responsive")" rel="stylesheet" type="text/css" />
      @Scripts.Render("~/Scripts/angular.min.js")
@@ -135,6 +151,8 @@ padding-right: 20px;
       <ul class="nav navbar-nav">
          @*<li class="active"><a href="#">iOS</a></li>*@
          <li class="active">@Html.ActionLink("Home", "Index", "Admin")</li>
+         <li class="active">@Html.ActionLink("Korisnièki Profili", "Index", "UserProfile")</li>
+         <li class="active">@Html.ActionLink("Nogometni Tim", "Index", "FootballTeam")</li>
          <li class="active">@Html.ActionLink("Meèevi", "Index", "Match")</li>
          @*<li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

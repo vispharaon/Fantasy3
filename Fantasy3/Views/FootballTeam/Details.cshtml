@@ -1,0 +1,30 @@
+﻿@model Fantasy3.Models.footballteam
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_BootstrapLayout.narrow.cshtml";
+}
+<br />
+<h2><small>Detalji Odabranog Tima</small></h2>
+
+<fieldset>
+    <legend>footballteam</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idFootballTeam)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idFootballTeam)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.teamName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.teamName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.idFootballTeam  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

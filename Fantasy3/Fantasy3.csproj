@@ -175,6 +175,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BootstrapBaseController.cs" />
+    <Compile Include="Controllers\FootballTeamController.cs" />
+    <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Controllers\ExampleLayoutsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MatchController.cs" />
@@ -730,6 +732,17 @@
     <Content Include="Views\Match\Create.cshtml" />
     <Content Include="Views\Match\Edit.cshtml" />
     <Content Include="Views\Match\Delete.cshtml" />
+    <Content Include="Views\UserProfile\Index.cshtml" />
+    <Content Include="Views\UserProfile\Details.cshtml" />
+    <Content Include="Views\UserProfile\Create.cshtml" />
+    <Content Include="Views\UserProfile\Edit.cshtml" />
+    <Content Include="Views\UserProfile\Delete.cshtml" />
+    <Content Include="Views\FootballTeam\Index.cshtml" />
+    <Content Include="Views\FootballTeam\Details.cshtml" />
+    <Content Include="Views\FootballTeam\Create.cshtml" />
+    <Content Include="Views\FootballTeam\Edit.cshtml" />
+    <Content Include="Views\FootballTeam\Delete.cshtml" />
+    <Content Include="Views\Account\Inactive.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,118 @@
+﻿@model Fantasy3.Models.user
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_BootstrapLayout.narrow.cshtml";
+}
+<br />
+<h2><small>Uređivanje korisničkog profila</small></h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+
+        @Html.HiddenFor(model => model.userId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.firstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.firstName)
+            @Html.ValidationMessageFor(model => model.firstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.lastName)
+            @Html.ValidationMessageFor(model => model.lastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dateOfBirth)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dateOfBirth)
+            @Html.ValidationMessageFor(model => model.dateOfBirth)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.gender)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.gender)
+            @Html.ValidationMessageFor(model => model.gender)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cellPhone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cellPhone)
+            @Html.ValidationMessageFor(model => model.cellPhone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.email)
+            @Html.ValidationMessageFor(model => model.email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.password)
+            @Html.ValidationMessageFor(model => model.password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.country)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.country)
+            @Html.ValidationMessageFor(model => model.country)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.closestCity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.closestCity)
+            @Html.ValidationMessageFor(model => model.closestCity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserGroup_idUserGroup, "usergroup")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UserGroup_idUserGroup", String.Empty)
+            @Html.ValidationMessageFor(model => model.UserGroup_idUserGroup)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.image)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.image)
+            @Html.ValidationMessageFor(model => model.image)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

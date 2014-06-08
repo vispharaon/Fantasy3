@@ -102,8 +102,11 @@ namespace Fantasy3.Controllers
             {
                 if (Convert.ToInt16(Session["UserGroup"]) == 2)
                     return RedirectToAction("Index", "Admin");
+                else if (Convert.ToInt16(Session["UserGroup"]) == 3)
+                    return RedirectToAction("Inactive", "Account");
                 else
-                    return RedirectToAction("Index", "Home");
+                    return View();
+                //RedirectToAction("Index", "Home");
             }
                 
         }
@@ -412,6 +415,15 @@ namespace Fantasy3.Controllers
             ViewBag.ProviderDisplayName = OAuthWebSecurity.GetOAuthClientData(provider).DisplayName;
             ViewBag.ReturnUrl = returnUrl;
             return View(model);
+        }
+
+        //
+        // GET: /Account/Inactive
+
+        [AllowAnonymous]
+        public ActionResult Inactive()
+        {
+            return View();
         }
 
         //

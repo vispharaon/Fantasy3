@@ -1,0 +1,93 @@
+﻿@model Fantasy3.Models.user
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_BootstrapLayout.narrow.cshtml";
+}
+<br />
+<h2><small>Detalji korisničkog računa</small></h2>
+
+<fieldset>
+    <legend></legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.firstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.firstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.lastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.lastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dateOfBirth)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dateOfBirth)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.gender)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.gender)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cellPhone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cellPhone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.country)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.country)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.closestCity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.closestCity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.usergroup.groupName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.usergroup.groupName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.image)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.image)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.userId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

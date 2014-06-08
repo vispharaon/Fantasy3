@@ -1,0 +1,235 @@
+﻿@model IEnumerable<Fantasy3.Models.user>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_BootstrapLayout.narrow.cshtml";
+}
+<br />
+<h2><small>Korisnički profili - Početna</small></h2>
+
+@*<hr>*@
+
+
+<div class="container-fluid">
+@for (int i = 0;i<= Model.ToList().Count/3;i++) {
+    <div class="row">
+        @foreach(var item in Model)
+        {
+            if (Model.ToList().IndexOf(item) % 3 == 0)
+            {
+                 <div class="col-md-4" >
+                     <div class="thumbnail">
+                        @Html.DisplayFor(modelItem => item.firstName)
+                        <br />
+                        @Html.DisplayFor(modelItem => item.lastName)
+                        <br />
+                        <small>@Html.DisplayFor(modelItem => item.email)</small>
+                        <button class="active">@Html.ActionLink("Details", "Details", new { id=item.userId })</button>
+                        <button class="active">@Html.ActionLink("Edit", "Edit", new { id=item.userId })</button>
+                        <button class="active">@Html.ActionLink("Delete", "Delete", new { id=item.userId })</button>
+                      </div>
+                 </div>
+            }
+            if (Model.ToList().IndexOf(item) % 3 == 1)
+            {
+                <div class="col-md-4">
+                     <div class="thumbnail">
+                        @Html.DisplayFor(modelItem => item.firstName)
+                        <br />
+                        @Html.DisplayFor(modelItem => item.lastName)
+                        <br />
+                        <small>@Html.DisplayFor(modelItem => item.email)</small>
+                        <button class="active">@Html.ActionLink("Details", "Details", new { id=item.userId })</button>
+                        <button class="active">@Html.ActionLink("Edit", "Edit", new { id=item.userId })</button>
+                         <button class="active">@Html.ActionLink("Delete", "Delete", new { id=item.userId })</button>
+                      </div>
+                 </div>
+            }
+            if (Model.ToList().IndexOf(item) % 3 == 2)
+            {
+                <div class="col-md-4">
+                     <div class="thumbnail">
+                        @Html.DisplayFor(modelItem => item.firstName)
+                        <br />
+                        @Html.DisplayFor(modelItem => item.lastName)
+                        <br />
+                        <small>@Html.DisplayFor(modelItem => item.email)</small>
+                        <button class="active">@Html.ActionLink("Details", "Details", new { id=item.userId })</button>
+                        <button class="active">@Html.ActionLink("Edit", "Edit", new { id=item.userId })</button>
+                         <button class="active">@Html.ActionLink("Delete", "Delete", new { id=item.userId })</button>
+                      </div>
+                 </div>
+            }
+         
+        }
+      </div>
+}
+</div>
+
+@*<div class="container">
+  <div class="row">
+    <h1>Bootstrap 3 Lightbox using Modal</h1>
+    <div class="row">
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 2" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/2255EE"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 3" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/449955/FFF"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 4" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/992233"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 5" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/2255EE"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 6" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/449955/FFF"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 8" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/777"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 9" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/992233"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 10" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/EEE"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 11" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/449955/FFF"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 12" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/DDD"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 13" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/992233"></a></div>
+    </div>
+    <hr>
+    <a href="http://bootply.com/71401">Edit on Bootply</a>
+    <hr>
+  </div>
+</div>*@
+
+
+
+
+@*
+<div class="container">
+  <div class="row">
+  	<div class="col-md-6">
+    
+      <div class="panel panel-default">
+			<div class="panel-body">
+              		<div class="row">
+                        <div class="col-xs-12 col-sm-8">
+                            <h2>Mike Anamendolla</h2>
+                            <p><strong>About: </strong> Web Designer / UI. </p>
+                            <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
+                            <p><strong>Skills: </strong>
+                                <span class="label label-info tags">html5</span> 
+                                <span class="label label-info tags">css3</span>
+                                <span class="label label-info tags">jquery</span>
+                                <span class="label label-info tags">bootstrap3</span>
+                            </p>
+                        </div><!--/col-->          
+                        <div class="col-xs-12 col-sm-4 text-center">
+                                <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="" class="center-block img-circle img-responsive">
+                                <ul class="list-inline ratings text-center" title="Ratings">
+                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                                </ul>
+                        </div><!--/col-->
+
+                        <div class="col-xs-12 col-sm-4">
+                            <h2><strong> 20,7K </strong></h2>                    
+                            <p><small>Followers</small></p>
+                            <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button>
+                        </div><!--/col-->
+                        <div class="col-xs-12 col-sm-4">
+                            <h2><strong>245</strong></h2>                    
+                            <p><small>Following</small></p>
+                            <button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button>
+                        </div><!--/col-->
+                        <div class="col-xs-12 col-sm-4">
+                            <h2><strong>43</strong></h2>                    
+                            <p><small>Snippets</small></p>
+                            <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Options </button>  
+                        </div><!--/col-->
+              		</div><!--/row-->
+              </div><!--/panel-body-->
+          </div><!--/panel-->
+
+    
+    
+    </div>
+  </div>
+</div>*@
+
+<br />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cellPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.closestCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usergroup.groupName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cellPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.closestCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usergroup.groupName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.image)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.userId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.userId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.userId })
+        </td>
+    </tr>
+}
+
+</table>

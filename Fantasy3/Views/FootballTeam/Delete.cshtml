@@ -1,0 +1,33 @@
+﻿@model Fantasy3.Models.footballteam
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_BootstrapLayout.narrow.cshtml";
+}
+<br />
+<h2><small>Brisanje Nogometnog Tima</small></h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>footballteam</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idFootballTeam)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idFootballTeam)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.teamName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.teamName)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Fantasy3.Models.footballteam>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_BootstrapLayout.narrow.cshtml";
+}
+<br />
+
+<h2><Small>Nogometni Tim - Početna</Small></h2>
+
+<p>
+   <button class="active">@Html.ActionLink("Create New", "Create")</button> 
+</p>
+
+@using (Html.BeginForm("FileUpload", "Home", FormMethod.Post, 
+                            new { enctype = "multipart/form-data" }))
+{  
+    <label for="file">Upload Image:</label> 
+    <input type="file" name="file" id="file" style="width: 100%;" /> 
+    <input type="submit" value="Upload" class="submit" /> 
+}
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idFootballTeam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.teamName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idFootballTeam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.teamName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idFootballTeam }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.idFootballTeam  }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.idFootballTeam  })
+        </td>
+    </tr>
+}
+
+</table>
